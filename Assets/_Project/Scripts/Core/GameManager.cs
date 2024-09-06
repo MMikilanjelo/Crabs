@@ -16,5 +16,4 @@ namespace Game.Core {
 			OnUpdate?.Invoke();
 		}
 	}
-
 }
