@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 3338560}
   - component: {fileID: 2350722}
   - component: {fileID: 3627442742163968842}
-  - component: {fileID: 3744885652929607210}
+  - component: {fileID: 6923039449485266790}
   m_Layer: 0
   m_Name: Scateboard
   m_TagString: Untagged
@@ -431,7 +431,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3744885652929607210
+--- !u!114 &6923039449485266790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,12 +445,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader_: {fileID: 11400000, guid: aa63f76fbb91773479152adc5dbfb86b, type: 2}
   rigidbody_: {fileID: 3627442742163968842}
-  movementSpeed_: 8
+  movementSpeed_: 3
   acceleration_: 0.8
   deceleration_: 10
-  turnSpeed_: 2.55
+  turnSpeed_: 5
   leanAmount_: 15
-  leanSpeed_: 2
+  leanSpeed_: 0.8
 --- !u!1 &194348
 GameObject:
   m_ObjectHideFlags: 0
