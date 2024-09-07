@@ -4,16 +4,16 @@ namespace Game.Components.Camera
 {
     public class TopDownCameraGlobalPosition
     {
-        private Transform _cameraGlobalTransformParent;
-        private Transform _playerCarTransform;
+        private Transform cameraGlobalTransformParent_;
+        private Transform playerCarTransform_;
 
-        private Vector3 _globalPositionVelocity = Vector3.zero;
-        private Vector3 _desiredCameraPosition;
+        private Vector3 globalPositionVelocity_ = Vector3.zero;
+        private Vector3 desiredCameraPosition_;
 
         public TopDownCameraGlobalPosition(Transform cameraGlobalTransformParent, Transform playerCarTransform)
         {
-            _cameraGlobalTransformParent = cameraGlobalTransformParent;
-            _playerCarTransform = playerCarTransform;
+            cameraGlobalTransformParent_ = cameraGlobalTransformParent;
+            playerCarTransform_ = playerCarTransform;
         }
 
         //Updates X , Z  coordinate of Global Camera position
@@ -21,18 +21,18 @@ namespace Game.Components.Camera
         {
             UpdateDesiredCameraPosition(offsetPosition, carVelocity, screenAspectRatio);
 
-            float distance = Vector3.Distance(_cameraGlobalTransformParent.position, _desiredCameraPosition);
+            float distance = Vector3.Distance(cameraGlobalTransformParent_.position, desiredCameraPosition_);
             float dynamicSmoothSpeed = Mathf.Lerp(smoothSpeed, maxSmoothSpeed, distance);
-            _cameraGlobalTransformParent.position = Vector3.SmoothDamp(_cameraGlobalTransformParent.position, _desiredCameraPosition, ref _globalPositionVelocity, dynamicSmoothSpeed);
+            cameraGlobalTransformParent_.position = Vector3.SmoothDamp(cameraGlobalTransformParent_.position, desiredCameraPosition_, ref globalPositionVelocity_, dynamicSmoothSpeed);
         }
 
         private void UpdateDesiredCameraPosition(Vector3 offsetPosition, Vector3 carVelocity, Vector2 screenAspectRatio)
         {
 
-            _desiredCameraPosition = new Vector3(
-                _playerCarTransform.position.x + offsetPosition.x + (carVelocity.x / screenAspectRatio.x),
-                _cameraGlobalTransformParent.position.y,
-                _playerCarTransform.position.z + offsetPosition.z + (carVelocity.z / screenAspectRatio.y)
+            desiredCameraPosition_ = new Vector3(
+                playerCarTransform_.position.x + offsetPosition.x + (carVelocity.x / screenAspectRatio.x),
+                cameraGlobalTransformParent_.position.y,
+                playerCarTransform_.position.z + offsetPosition.z + (carVelocity.z / screenAspectRatio.y)
             );
         }
     }

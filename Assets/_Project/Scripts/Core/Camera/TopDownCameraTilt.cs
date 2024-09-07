@@ -4,14 +4,14 @@ namespace Game.Components.Camera
 {
     public class TopDownCameraTilt
     {
-        private Transform _cameraRollingParent;
+        private Transform cameraRollingParent_;
         public TopDownCameraTilt(Transform cameraRollingParent)
         {
-            _cameraRollingParent = cameraRollingParent;
+            cameraRollingParent_ = cameraRollingParent;
         }
         public void SetTiltAngle(Vector3 tiltAngleToSet)
         {
-            _cameraRollingParent.localRotation = Quaternion.Euler(tiltAngleToSet.x, tiltAngleToSet.y, tiltAngleToSet.z);
+            cameraRollingParent_.localRotation = Quaternion.Euler(tiltAngleToSet.x, tiltAngleToSet.y, tiltAngleToSet.z);
         }
     }
 }

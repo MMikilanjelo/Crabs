@@ -4,21 +4,21 @@ namespace Game.Components.Camera
 {
     public class TopDownCameraHeight
     {
-        private Transform _cameraGlobalTransformParent;
+        private Transform cameraGlobalTransformParent_;
 
         public TopDownCameraHeight(Transform cameraGlobalTransformParent)
         {
-            _cameraGlobalTransformParent = cameraGlobalTransformParent;
+           cameraGlobalTransformParent_ = cameraGlobalTransformParent;
         }
 
         public void SetCameraHeight(float YOffset, float maxOffsetY, float speed, float speedThreshold)
         {
             float dynamicOffsetY = GetDynamicOffsetY(YOffset, maxOffsetY, speed, speedThreshold);
             //Updates Y coordinate of Global Camera position
-            _cameraGlobalTransformParent.position = new Vector3(
-                _cameraGlobalTransformParent.position.x,
+           cameraGlobalTransformParent_.position = new Vector3(
+               cameraGlobalTransformParent_.position.x,
                 dynamicOffsetY,
-                _cameraGlobalTransformParent.position.z
+               cameraGlobalTransformParent_.position.z
             );
         }
 

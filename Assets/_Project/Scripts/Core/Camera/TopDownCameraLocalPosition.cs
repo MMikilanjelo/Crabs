@@ -4,21 +4,21 @@ namespace Game.Components.Camera
 {
     public class TopDownCameraLocalPosition
     {
-        private Transform _cameraLocalPositionParent;
-        private Vector3 _localPositionVelocity = Vector3.zero;
-        private Vector2 _cameraPositionRectangle;
+        private Transform cameraLocalPositionParent_;
+        private Vector3 localPositionVelocity_ = Vector3.zero;
+        private Vector2 cameraPositionRectangle_;
 
         public TopDownCameraLocalPosition(Transform cameraLocalPositionParent)
         {
-            _cameraLocalPositionParent = cameraLocalPositionParent;
+            cameraLocalPositionParent_ = cameraLocalPositionParent;
         }
         //Updates X , Z  coordinate of Local Camera position for better Road view
         public void SetLocalCameraPosition(Vector3 velocity, Vector2 screenAspectRatio, float smoothSpeed, float returnSmoothSpeed)
         {
             UpdateRectangle(velocity, screenAspectRatio, smoothSpeed);
-            Vector3 targetPosition = new Vector3(_cameraPositionRectangle.x, _cameraLocalPositionParent.localPosition.y, _cameraPositionRectangle.y);
-            _cameraLocalPositionParent.localPosition =
-                Vector3.SmoothDamp(_cameraLocalPositionParent.localPosition, targetPosition, ref _localPositionVelocity, returnSmoothSpeed);
+            Vector3 targetPosition = new Vector3(cameraPositionRectangle_.x, cameraLocalPositionParent_.localPosition.y, cameraPositionRectangle_.y);
+            cameraLocalPositionParent_.localPosition =
+                Vector3.SmoothDamp(cameraLocalPositionParent_.localPosition, targetPosition, ref localPositionVelocity_, returnSmoothSpeed);
         }
 
         private void UpdateRectangle(Vector3 velocity, Vector2 screenAspectRatio, float smoothSpeed)
@@ -26,7 +26,7 @@ namespace Game.Components.Camera
             var direction = velocity.normalized;
             var speed = velocity.magnitude;
 
-            _cameraPositionRectangle = new Vector2(direction.x * speed * screenAspectRatio.x * smoothSpeed,
+            cameraPositionRectangle_ = new Vector2(direction.x * speed * screenAspectRatio.x * smoothSpeed,
                              direction.z * speed * screenAspectRatio.y * smoothSpeed);
         }
     }
