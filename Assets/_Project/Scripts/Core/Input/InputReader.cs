@@ -1,17 +1,19 @@
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static Game.Core.Input.GameInput;
+using static GameInput;
 
 namespace Game.Core.Input {
 	[CreateAssetMenu(fileName = "Input Reader", menuName = "Input/InputReader")]
 	public class InputReader : ScriptableObject, IGameplayActions {
 
 		public event Action<Vector2> Move = delegate { };
+		public event Action<bool> Jump = delegate { };
 
 		private GameInput gameInput_;
 		public Vector3 Direction => gameInput_.Gameplay.Move.ReadValue<Vector2>();
+
 
 		private void OnEnable() {
 			if (gameInput_ == null) {
@@ -23,6 +25,16 @@ namespace Game.Core.Input {
 
 		public void OnMove(InputAction.CallbackContext context) {
 			Move?.Invoke(context.ReadValue<Vector2>());
+		}
+
+		public void OnJump(InputAction.CallbackContext context) {
+			if (context.phase == InputActionPhase.Performed) {
+				Jump?.Invoke(true);
+			}
+			else if(context.phase == InputActionPhase.Canceled)
+			{
+				Jump?.Invoke(false);
+			}
 		}
 	}
 }

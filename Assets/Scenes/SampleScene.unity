@@ -553,7 +553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 453344, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.128
+      value: 0.065
       objectReference: {fileID: 0}
     - target: {fileID: 453344, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -592,6 +592,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
+      propertyPath: jumpForce_
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
       propertyPath: turnSpeed_
       value: 3
       objectReference: {fileID: 0}
@@ -606,6 +610,14 @@ PrefabInstance:
     - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
       propertyPath: movementSpeed_
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
+      propertyPath: groundCheckRadius_
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
+      propertyPath: groundLayer_.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

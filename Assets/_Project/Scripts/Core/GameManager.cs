@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Game.Components.Camera;
 using Game.Entities.SkateBoard;
 using UnityEngine;
@@ -18,6 +18,7 @@ namespace Game.Core {
 		///Only subscribe for On Update Event never put you code into Update Method From other class and here
 		/// </summary>
 		public void Update() {
+
 			OnUpdate?.Invoke();
 		}
 	}
