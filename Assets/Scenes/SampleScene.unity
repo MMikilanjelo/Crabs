@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 425082084}
   - component: {fileID: 425082083}
   - component: {fileID: 425082082}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LevelTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,6 +600,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
+      propertyPath: groundCheck_
+      value: 
+      objectReference: {fileID: 1994685587}
+    - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
       propertyPath: acceleration_
       value: 0.8
       objectReference: {fileID: 0}
@@ -617,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6923039449485266790, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
       propertyPath: groundLayer_.m_Bits
-      value: 4294967295
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -667,6 +671,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4595992b7eb8c5448b5ff6951b97a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1994685587 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 453344, guid: 11905513070e2f34e8cd7350fb0d8ce7, type: 3}
+  m_PrefabInstance: {fileID: 1421529249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
