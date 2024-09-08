@@ -28,12 +28,14 @@ namespace Game.Core.Input {
 		}
 
 		public void OnJump(InputAction.CallbackContext context) {
-			if (context.phase == InputActionPhase.Performed) {
-				Jump?.Invoke(true);
-			}
-			else if(context.phase == InputActionPhase.Canceled)
-			{
-				Jump?.Invoke(false);
+			
+			switch (context.phase) {
+				case InputActionPhase.Started:
+					Jump.Invoke(true);
+					break;
+				case InputActionPhase.Canceled:
+					Jump.Invoke(false);
+					break;
 			}
 		}
 	}
